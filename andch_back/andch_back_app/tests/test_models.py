@@ -1,5 +1,5 @@
 from django.test import TestCase
-from andch_back.andch_back_app.models import Client
+from andch_back_app.models import Client
 
 # Create your tests here.
 
