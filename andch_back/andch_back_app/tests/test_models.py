@@ -1,5 +1,5 @@
 from django.test import TestCase
-from andch_back_app.models import Client, Andi, Project
+from andch_back_app.models import Client, Andi, Project, ProjectAndis
 
 # Create your tests here.
 
@@ -49,7 +49,8 @@ class ProjectModelTest(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        Project.objects.create(projectTitle='British Airways Mobile App', projectDescription='test test test')
+        client = Client.objects.create(clientName='British Airways', clientImagePath='127.0.0.1:8000/static/ba.png')
+        Project.objects.create(client=client,projectTitle='British Airways Mobile App', projectDescription='test test test')
     
     def test_projecttitle_max_length(self):
         project = Project.objects.get(projectTitle='British Airways Mobile App')
@@ -60,3 +61,25 @@ class ProjectModelTest(TestCase):
         project = Project.objects.get(projectTitle='British Airways Mobile App')
         self.assertEquals(str(project), 'British Airways Mobile App')
 
+class ProjectAndisModelTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        client = Client.objects.create(clientName='British Airways', clientImagePath='127.0.0.1:8000/static/ba.png')
+        project = Project.objects.create(client=client, projectTitle='British Airways Mobile App', projectDescription='test test test')
+        andi = Andi.objects.create(andiName='John Smith', andiPhotoPath='127.0.0.1:8000/static/ba.png')
+        ProjectAndis.objects.create(project=project, projectAndi=andi)
+    
+    def test_object_name(self):
+        projectAndis = ProjectAndis.objects.get(project=Project.objects.get(projectTitle='British Airways Mobile App'))
+        self.assertEqual(str(projectAndis), 'British Airways Mobile App: John Smith')
+
+class ProjectImagesModelTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        client = Client.objects.create(clientName='British Airways', clientImagePath='127.0.0.1:8000/static/ba.png')
+        project = Project.objects.create(client=client, projectTitle='British Airways Mobile App', projectDescription='test test test')
+        ProjectImages.objects.create(project=project, projectImagePath='127.0.0.1:8000/static/ba.png')
+
+    def test_object_name(self):
+        projectImages = ProjectImages.objects.get(project=Project.objects.get(projectTitle='British Airways Mobile App'))
+        self.assertEqual(str(projectImages), 'British Airways Mobile App: 127.0.0.1:8000/static/ba.png')

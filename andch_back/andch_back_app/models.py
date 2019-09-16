@@ -16,6 +16,7 @@ class Andi(models.Model):
         return self.andiName
 
 class Project(models.Model):
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
     projectTitle = models.CharField(max_length=100)
     projectDescription = models.TextField()
 
@@ -27,11 +28,13 @@ class ProjectAndis(models.Model):
     projectAndi = models.ForeignKey(Andi, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.project.projectTitle + ":" + self.projectAndi.andiName
+        return self.project.projectTitle + ": " + self.projectAndi.andiName
 
 class ProjectImages(models.Model):
+    position = models.IntegerField()
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     projectImagePath = models.CharField(max_length=250)
+    ordering = ['position']
 
     def __str__(self):
-        return self.project.projectTitle + ":" + self.projectImagePath
+        return self.project.projectTitle + ": " + self.projectImagePath
