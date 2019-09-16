@@ -9,6 +9,6 @@ def all_clients(request):
     clientList = []
     for client in clients:
         clientList.append({'clientName': client.clientName, 'imagePath': client.imagePath},)
-    data = {'clients:' : clientList}
+    data = {'clients' : clientList}
 
     return JsonResponse(data)
