@@ -15,9 +15,9 @@ from andch_back_app.models import Client
 
 def import_clients():
     Client.objects.get_or_create(clientName='Shawbrook',
-                         imagePath='andch_back/static/img')
+                         clientLogo='andch_back/static/img')
     Client.objects.get_or_create(clientName='British Airways',
-                         imagePath='andch_back/static/img')
+                         clientLogo='andch_back/static/img')
 
 def main():
     #Set up environment
