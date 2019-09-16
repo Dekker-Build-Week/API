@@ -1,5 +1,5 @@
 from django.test import TestCase
-from andch_back_app.models import Client, Andi, Project, ProjectAndis
+from andch_back_app.models import Client, Andi, Project, ProjectAndis, ProjectImages
 
 # Create your tests here.
 
@@ -78,8 +78,14 @@ class ProjectImagesModelTest(TestCase):
     def setUpTestData(cls):
         client = Client.objects.create(clientName='British Airways', clientImagePath='127.0.0.1:8000/static/ba.png')
         project = Project.objects.create(client=client, projectTitle='British Airways Mobile App', projectDescription='test test test')
-        ProjectImages.objects.create(project=project, projectImagePath='127.0.0.1:8000/static/ba.png')
+        ProjectImages.objects.create(project=project, projectImagePath='127.0.0.1:8000/static/ba.png', position=1)
+        ProjectImages.objects.create(project=project, projectImagePath='127.0.0.1:8000/static/ba.png', position=0)
+        ProjectImages.objects.create(project=project, projectImagePath='127.0.0.1:8000/static/ba.png', position=2)
+
+    def test_position_ordering_correct(self):
+        projects = ProjectImages.objects.filter(project=Project.objects.get(projectTitle='British Airways Mobile App'))
+        self.assertEqual(1, projects[1].position)
 
     def test_object_name(self):
-        projectImages = ProjectImages.objects.get(project=Project.objects.get(projectTitle='British Airways Mobile App'))
+        projectImages = ProjectImages.objects.get(project=Project.objects.get(projectTitle='British Airways Mobile App'), position=0)
         self.assertEqual(str(projectImages), 'British Airways Mobile App: 127.0.0.1:8000/static/ba.png')

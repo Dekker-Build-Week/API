@@ -34,7 +34,9 @@ class ProjectImages(models.Model):
     position = models.IntegerField()
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     projectImagePath = models.CharField(max_length=250)
-    ordering = ['position']
+    
+    class Meta:
+        ordering = ['position']
 
     def __str__(self):
         return self.project.projectTitle + ": " + self.projectImagePath
