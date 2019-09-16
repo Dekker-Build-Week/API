@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'andch_back_app',
     'corsheaders',
-    'django_mysql'
 ]
 
 MIDDLEWARE = [
