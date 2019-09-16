@@ -5,7 +5,7 @@ import json
 class AllClientsViewTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        Client.objects.create(clientName='British Airways', imagePath='a/b/c')
+        Client.objects.create(clientName='British Airways', clientImagePath='a/b/c')
 
     def test_view_url_exists_at_desired_location(self):
         response = self.client.get('/andch_back_app/clients/')
@@ -21,6 +21,6 @@ class AllClientsViewTest(TestCase):
         self.assertEqual(str(response), '{\'clients\': []}')
     
     def test_view_multiple_clients_data_setup_correctly(self):
-        Client.objects.create(clientName='Lloyds Bank', imagePath='e/d/f')
+        Client.objects.create(clientName='Lloyds Bank', clientImagePath='e/d/f')
         response = json.loads(self.client.get('/andch_back_app/clients/').content)
         self.assertEqual(str(response), '{\'clients\': [{\'clientName\': \'British Airways\', \'imagePath\': \'a/b/c\'}, {\'clientName\': \'Lloyds Bank\', \'imagePath\': \'e/d/f\'}]}')
