@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "projects": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "projectTitle": {
+              "type": "string"
+            },
+            "clientName": {
+              "type": "string"
+            },
+            "clientLogo": {
+              "type": "string"
+            },
+            "projectDescription": {
+              "type": "string"
+            },
+            "team": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "ANDiName": {
+                      "type": "string"
+                    },
+                    "ANDiPhoto": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "ANDiName",
+                    "ANDiPhoto"
+                  ]
+                }
+              ]
+            },
+            "images": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "techStack": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "string"
+                    },
+                    "important": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "image",
+                    "important"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "projectTitle",
+            "clientName",
+            "clientLogo",
+            "projectDescription",
+            "team",
+            "images",
+            "techStack"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "projects"
+  ]
+}
