@@ -34,7 +34,7 @@ class ProjectImages(models.Model):
     position = models.IntegerField()
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     projectImagePath = models.CharField(max_length=250)
-    
+
     class Meta:
         ordering = ['position']
 
@@ -52,4 +52,3 @@ class ProjectTechnologyStacks(models.Model):
     
     def __str__(self):
         return self.project.projectTitle + ": " + self.technologyName
-
