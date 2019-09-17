@@ -40,3 +40,15 @@ class ProjectImages(models.Model):
 
     def __str__(self):
         return self.project.projectTitle + ": " + self.projectImagePath
+
+class ProjectTechnologyStacks(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    technologyName = models.CharField(max_length=100)
+    technologyImagePath = models.CharField(max_length=250)
+    important = models.BooleanField()
+
+    class Meta:
+        ordering = ['-important']
+    
+    def __str__(self):
+        return self.project.projectTitle + ": " + self.technologyName

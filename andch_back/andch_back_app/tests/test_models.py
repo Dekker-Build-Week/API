@@ -1,5 +1,5 @@
 from django.test import TestCase
-from andch_back_app.models import Client, Andi, Project, ProjectAndis, ProjectImages
+from andch_back_app.models import Client, Andi, Project, ProjectAndis, ProjectImages, ProjectTechnologyStacks
 
 # Create your tests here.
 
@@ -89,3 +89,20 @@ class ProjectImagesModelTest(TestCase):
     def test_object_name(self):
         projectImages = ProjectImages.objects.get(project=Project.objects.get(projectTitle='British Airways Mobile App'), position=0)
         self.assertEqual(str(projectImages), 'British Airways Mobile App: 127.0.0.1:8000/static/ba.png')
+    
+class ProjectTechnologyStacksTest(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        client = Client.objects.create(clientName='British Airways', clientImagePath='127.0.0.1:8000/static/ba.png')
+        project = Project.objects.create(client=client, projectTitle='British Airways Mobile App', projectDescription='test test test')
+        ProjectTechnologyStacks.objects.create(project=project, important=False, technologyName='Java', technologyImagePath='test')
+        ProjectTechnologyStacks.objects.create(project=project, important=True, technologyName='Java', technologyImagePath='test')
+    
+    def test_important_ordering_correct(self):
+        projectStack = ProjectTechnologyStacks.objects.filter(project=Project.objects.get(projectTitle='British Airways Mobile App'))
+        self.assertEquals(True, projectStack[0].important)
+    
+    def test_object_name(self):
+        projectStack = ProjectTechnologyStacks.objects.get(project=Project.objects.get(projectTitle='British Airways Mobile App'), important=True)
+        self.assertEqual(str(projectStack), 'British Airways Mobile App: Java')
