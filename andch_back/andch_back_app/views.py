@@ -21,9 +21,13 @@ def all_projects(request):
     if projects:
         for project in projects:
             andis = []
+            imagePaths = []
             andi_list = ProjectAndis.objects.filter(project=project)
+            project_images_list = ProjectImages.objects.filter(project=project)
             for andi in andi_list:
                 andis.append({'ANDiName': andi.projectAndi.andiName, 'ANDiPhoto': andi.projectAndi.andiPhotoPath})
+            for image in project_images_list:
+                imagePaths.append(image.projectImagePath)
             all_projects.append(
                 {
                     'projectTitle': project.projectTitle,
@@ -31,6 +35,7 @@ def all_projects(request):
                     'clientLogo': project.client.clientImagePath,
                     'projectDescription': project.projectDescription,
                     'team': andis,
+                    'images': imagePaths,
                 }
             )
 
