@@ -3,3 +3,4 @@ django-cors-headers
 jsonschema
 gunicorn
 django-heroku
+Pillow
