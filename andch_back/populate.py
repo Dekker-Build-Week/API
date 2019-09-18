@@ -17,16 +17,16 @@ from andch_back_app.models import ProjectImages, ProjectTechnologyStacks
 
 def import_clients():
     print('Importing clients... ', end=' ')
-    client_path = 'andch_back_app/static/clientLogos/'
+    client_path = 'clientLogos/'
     cni = Client(clientName='Condé Nast International',
-                         clientImagePath=client_path)
+                         clientImagePath=client_path + 'CondeNast.jpg')
     cni.save()
     allen_and_overy = Client(clientName='allen_and_overy',
-                             clientImagePath=client_path)
+                             clientImagePath=client_path + 'AllenAndOvery.jpg')
     allen_and_overy.save()
-    eshopworld = Client(clientName='eShopWorld', clientImagePath=client_path)
+    eshopworld = Client(clientName='eShopWorld', clientImagePath=client_path + 'eshopworld.jpg')
     eshopworld.save()
-    talk_talk = Client(clientName='TalkTalk', clientImagePath=client_path)
+    talk_talk = Client(clientName='TalkTalk', clientImagePath=client_path + 'TalkTalk.png')
     talk_talk.save()
     print('done!')
 
@@ -51,7 +51,7 @@ def import_clients():
     print('done!')
 
     print('Importing ANDis...', end=' ')
-    andi_photos='andch_back_app/static/andis/'
+    andi_photos='andis/'
     sam_c = Andi(andiName='Sam Clewlow',andiPhotoPath=andi_photos+'SamClewlow.png')
     sam_c.save()
     christian = Andi(andiName='Christian',andiPhotoPath=andi_photos+'ChristianChatteron.png')
@@ -81,7 +81,7 @@ def import_clients():
     print('done!')
 
     print('Importing project images...', end=' ')
-    proj_img = 'andch_back_app/static/site_images/'
+    proj_img = 'site_images/'
     ProjectImages.objects.get_or_create(position=0, project=vogue_app,
                                         projectImagePath=proj_img+'vogue1.jpeg')
     ProjectImages.objects.get_or_create(position=1, project=vogue_app,
@@ -96,7 +96,7 @@ def import_clients():
                                         projectImagePath=proj_img+'peerpoint4.jpg')
 
     print('done!')
-    tp = 'andch_back_app/static/tech_images'
+    tp = 'tech_images/'
     ProjectTechnologyStacks.objects.get_or_create(project=digi_repair,
                                                   technologyName='Angular',
                                                   technologyImagePath=tp+'angular.png',

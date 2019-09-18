@@ -6,15 +6,19 @@ from andch_back_app.models import Client, Project, Andi, ProjectAndis, ProjectIm
 # Create your views here.
 
 def all_clients(request):
+    serverURL = '127.0.0.1:8000'
+    
     clients = Client.objects.all()
     clientList = []
     for client in clients:
-        clientList.append({'clientName': client.clientName, 'imagePath': client.clientImagePath},)
+        clientList.append({'clientName': client.clientName, 'imagePath': serverURL + client.clientImagePath.url},)
     data = {'clients' : clientList}
 
     return JsonResponse(data)
 
 def all_projects(request):
+    serverURL = request.META.get('HTTP_HOST', '127.0.0.1:8000')
+    
     projects = Project.objects.all()
     all_projects =[]
 
@@ -28,18 +32,18 @@ def all_projects(request):
             project_stack_list = ProjectTechnologyStacks.objects.filter(project=project)
             
             for andi in andi_list:
-                andis.append({'ANDiName': andi.projectAndi.andiName, 'ANDiPhoto': andi.projectAndi.andiPhotoPath})
+                andis.append({'ANDiName': andi.projectAndi.andiName, 'ANDiPhoto': serverURL + andi.projectAndi.andiPhotoPath.url})
             for image in project_images_list:
-                imagePaths.append(image.projectImagePath)
+                imagePaths.append(serverURL + image.projectImagePath.url)
             for tech in project_stack_list:
-                techStacks.append({'name': tech.technologyName, 'image': tech.technologyImagePath, 'important': tech.important})
+                techStacks.append({'name': tech.technologyName, 'image': serverURL + tech.technologyImagePath.url, 'important': tech.important})
             
             
             all_projects.append(
                 {
                     'projectTitle': project.projectTitle,
                     'clientName': project.client.clientName,
-                    'clientLogo': project.client.clientImagePath,
+                    'clientLogo': serverURL + project.client.clientImagePath.url,
                     'projectDescription': project.projectDescription,
                     'team': andis,
                     'images': imagePaths,

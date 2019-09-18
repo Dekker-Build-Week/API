@@ -3,14 +3,14 @@ from django.db import models
 # Create your models here.
 class Client(models.Model):
     clientName = models.CharField(max_length=100)
-    clientImagePath = models.CharField(max_length=250)
+    clientImagePath = models.ImageField(upload_to = 'clientLogos/')
 
     def __str__(self):
         return self.clientName
 
 class Andi(models.Model):
     andiName = models.CharField(max_length=150)
-    andiPhotoPath = models.CharField(max_length=250)
+    andiPhotoPath = models.ImageField(upload_to = 'andis/')
 
     def __str__(self):
         return self.andiName
@@ -33,18 +33,18 @@ class ProjectAndis(models.Model):
 class ProjectImages(models.Model):
     position = models.IntegerField()
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    projectImagePath = models.CharField(max_length=250)
+    projectImagePath = models.ImageField(upload_to = 'site_images/')
 
     class Meta:
         ordering = ['position']
 
     def __str__(self):
-        return self.project.projectTitle + ": " + self.projectImagePath
+        return self.project.projectTitle + ": " + self.projectImagePath.url
 
 class ProjectTechnologyStacks(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     technologyName = models.CharField(max_length=100)
-    technologyImagePath = models.CharField(max_length=250)
+    technologyImagePath = models.ImageField(upload_to = 'tech_images/')
     important = models.BooleanField()
 
     class Meta:
