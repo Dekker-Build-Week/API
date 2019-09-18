@@ -5,17 +5,6 @@ from andch_back_app.models import Client, Project, Andi, ProjectAndis, ProjectIm
 
 # Create your views here.
 
-def all_clients(request):
-    serverURL = '127.0.0.1:8000'
-    
-    clients = Client.objects.all()
-    clientList = []
-    for client in clients:
-        clientList.append({'clientName': client.clientName, 'imagePath': serverURL + client.clientImagePath.url},)
-    data = {'clients' : clientList}
-
-    return JsonResponse(data)
-
 def all_projects(request):
     serverURL = request.META.get('HTTP_HOST', '127.0.0.1:8000')
     
