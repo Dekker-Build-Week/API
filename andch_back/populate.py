@@ -80,7 +80,7 @@ def import_clients():
     andi_photos='andis/'
     sam_c = Andi(andiName='Sam Clewlow',andiPhotoPath=andi_photos+'SamClewlow.png')
     sam_c.save()
-    James_g = Andi(andiName='James Grant',andiPhotoPath=andi_photos+'JamesGrant.png')
+    james_g = Andi(andiName='James Grant',andiPhotoPath=andi_photos+'JamesGrant.png')
     james_g.save()
     dami_o = Andi(andiName='Dami Olufemi',andiPhotoPath=andi_photos+'DamiOlufemi.png')
     dami_o.save()
