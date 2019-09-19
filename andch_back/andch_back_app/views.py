@@ -27,6 +27,9 @@ def all_projects(request):
             for tech in project_stack_list:
                 techStacks.append({'name': tech.technologyName, 'image': serverURL + tech.technologyImagePath.url, 'important': tech.important})
             
+            videoURL = ''
+            if ProjectVideos.objects.filter(project=project).exists():
+                videoURL = serverURL + ProjectVideos.objects.filter(project=project).first().projectVideoPath.url
             
             all_projects.append(
                 {
@@ -37,6 +40,7 @@ def all_projects(request):
                     'team': andis,
                     'techStack': techStacks,
                     'images': imagePaths,
+                    'video': videoURL,
                 }
             )
 

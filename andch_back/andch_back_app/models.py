@@ -74,5 +74,9 @@ class ProjectVideos(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     projectVideoPath = models.FileField(upload_to = 'project_videos/')
 
+    class Meta:
+        verbose_name = 'Project Video'
+        verbose_name_plural = 'Project Videos'
+
     def __str__(self):
         return self.project.projectTitle + ": " + self.projectVideoPath.url
