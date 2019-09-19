@@ -190,7 +190,7 @@ def import_clients():
     ProjectVideos.objects.get_or_create(project=vogue_app,
                                         projectVideoPath='project_videos/Vogue.MOV')
     ProjectVideos.objects.get_or_create(project=asto_io,
-                                        projectVideoPath='project_videos/Asto.MOV')
+                                        projectVideoPath='project_videos/Asto.mp4')
 
 def main():
     # Set up environment
