@@ -42,19 +42,19 @@ def import_clients():
     peerpoint.save()
     vogue_app = Project(client=cni, projectTitle='Vogue Runway',
                      projectDescription='Initially the application managed content for the US Vogue fashion shows,'+ 
-                    'the launch of Vogue Runway, an extensive resource of'+
-                    '12,000-plus collections, over 100 seasons, and more'+
-                    'than 1 million runway looks. To coincide with the big'+
-                    'debut, we’re introducing a new app that will appeal to'+
-                    'the over-scheduled and the under-stimulated alike. Meet'+
-                    'Vogue Runway, the app that provides style-minded' +
-                    'smartphone users with unlimited access to fashion shows'+
-                    'from around the globe. Whenever. Wherever')
+                    'the launch of Vogue Runway, an extensive resource of '+
+                    '12,000-plus collections, over 100 seasons, and more '+
+                    'than 1 million runway looks. To coincide with the big '+
+                    'debut, we’re introducing a new app that will appeal to '+
+                    'the over-scheduled and the under-stimulated alike. Meet '+
+                    'Vogue Runway, the app that provides style-minded ' +
+                    'smartphone users with unlimited access to fashion shows '+
+                    'from around the globe. Whenever. Wherever.')
     
     vogue_app.save()
     un_app = Project(client=eshopworld, projectTitle='UN Payment Site',
-                     projectDescription='A personalised storefront for customers who have registered'+
-                     'an interest for a new model of watch'+
+                     projectDescription='A personalised storefront for customers who have registered '+
+                     'an interest for a new model of watch.'+
                      'Accepts a deposit to guarantee the customer recieves the watch as soon as its avilable'+
                      'for shipping')
     un_app.save()
