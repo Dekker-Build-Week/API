@@ -40,8 +40,7 @@ def import_clients():
                         +'fun and good, blah blah blah, blah')
     peerpoint.save()
     vogue_app = Project(client=cni, projectTitle='Front Row (Fashion Show CMS)',
-                         projectDescription='vogue'+
-                         'Initially the application managed content for the US Vogue fashion shows,'+ 
+                         projectDescription='Initially the application managed content for the US Vogue fashion shows,'+ 
                         'now the current application manages content  for all markets.'+ 
                         'For Global markets, Global content editors are able to manage central data,'+ 
                         'schedule new fashion shows and much more. Local market editors can add localised content, add reviews,'+ 
