@@ -8,6 +8,6 @@ To install this applications dependencies on Mac with brew, first install and li
 brew install openssl
 brew install postgresql
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
-pip3 install -r requirments.txt
+pip3 install -r requirments.txt              # You should probs do this step in a virtual enviroment, but w/e
 ```
 Then run the application by navigating to the  `andch\_back` directory and run `python manage.py runserver`
