@@ -141,5 +141,5 @@ CORS_ORIGIN_WHITELIST = [
          'http://localhost:3000'
      ]
 
-django_heroku.settings(locals())
+django_heroku.settings(locals(), test_runner=False)
 del DATABASES['default']['OPTIONS']['sslmode']
