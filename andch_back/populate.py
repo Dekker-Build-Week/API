@@ -40,22 +40,22 @@ def import_clients():
                         projectDescription='Peer point is a legal app which is'
                         +'fun and good, blah blah blah, blah')
     peerpoint.save()
-    vogue_app = Project(client=cni, projectTitle='Vogue Runway',
-                     projectDescription='Initially the application managed content for the US Vogue fashion shows,'+ 
-                    'the launch of Vogue Runway, an extensive resource of '+
+    vogue_app = Project(client=cni, projectTitle='Fashion Shows',
+                     projectDescription='Initially the application managed content for the US Vogue fashion shows, '+ 
+                    'the launch of Fashion Shows, an extensive resource of '+
                     '12,000-plus collections, over 100 seasons, and more '+
                     'than 1 million runway looks. To coincide with the big '+
                     'debut, we’re introducing a new app that will appeal to '+
                     'the over-scheduled and the under-stimulated alike. Meet '+
-                    'Vogue Runway, the app that provides style-minded ' +
+                    'Fashion Shows, the app that provides style-minded ' +
                     'smartphone users with unlimited access to fashion shows '+
                     'from around the globe. Whenever. Wherever.')
     
     vogue_app.save()
     un_app = Project(client=eshopworld, projectTitle='UN Payment Site',
                      projectDescription='A personalised storefront for customers who have registered '+
-                     'an interest for a new model of watch.'+
-                     'Accepts a deposit to guarantee the customer recieves the watch as soon as its avilable'+
+                     'an interest for a new model of watch. '+
+                     'Accepts a deposit to guarantee the customer recieves the watch as soon as its avilable '+
                      'for shipping')
     un_app.save()
     
@@ -65,9 +65,9 @@ def import_clients():
     #clipper_quay.save()
     
     asto_io = Project(client=santander, projectTitle='Asto.io',
-                          projectDescription='The aim was to create an app that gives back time to those leading and managing SMEs.'+
-                      'Enable users to capture, tag and export receipts, aggregate all their banking / financial information,'+ 
-                      'create invoices and access insights. Create a service, featured in the Asto app,'+ 
+                          projectDescription='The aim was to create an app that gives back time to those leading and managing SMEs. '+
+                      'Enable users to capture, tag and export receipts, aggregate all their banking / financial information, '+ 
+                      'create invoices and access insights. Create a service, featured in the Asto app, '+ 
                       'that allows users to finance their invoices to fill their cash flow gaps.')
     asto_io.save()
     
@@ -199,6 +199,14 @@ def import_clients():
     ProjectTechnologyStacks.objects.get_or_create(project=peerpoint,
                                                   technologyName='Azure',
                                                   technologyImagePath=tp+'azure.jpg',
+                                                  important=True)
+    ProjectTechnologyStacks.objects.get_or_create(project=peerpoint,
+                                                  technologyName='React',
+                                                  technologyImagePath=tp+'reactjs.png',
+                                                  important=True)
+    ProjectTechnologyStacks.objects.get_or_create(project=peerpoint,
+                                                  technologyName='Node.js',
+                                                  technologyImagePath=tp+'nodejs.jpg',
                                                   important=True)
     ProjectTechnologyStacks.objects.get_or_create(project=asto_io,
                                                   technologyName='iOS',
