@@ -1,5 +1,5 @@
 from django.test import TestCase
-from andch_back_app.models import Client, Project, Andi, ProjectAndis, ProjectImages, ProjectTechnologyStacks
+from andch_back_app.models import Client, Project, Andi, ProjectAndis, ProjectImages, ProjectTechnologyStacks, ProjectVideos
 import json
 from andch_back_app.tests.assertions import assert_valid_schema
 import tempfile
@@ -20,6 +20,11 @@ class AllProjectsViewTest(TestCase):
         response = self.client.get('/andch_back_app/projects/')
         self.assertEqual(response.status_code, 200)
 
-    def test_all_projects_response_schema(self):
+    def test_all_projects_response_schema_no_video(self):
+        response = json.loads(self.client.get('/andch_back_app/projects/').content)
+        assert_valid_schema(response, 'projectSchema.json')
+
+    def test_all_projects_response_schema_with_video(self):
+        ProjectVideos.objects.create(project=Project.objects.get(projectTitle='British Airways Mobile App'), projectVideoPath=tempfile.NamedTemporaryFile(suffix=".jpg").name)
         response = json.loads(self.client.get('/andch_back_app/projects/').content)
         assert_valid_schema(response, 'projectSchema.json')
