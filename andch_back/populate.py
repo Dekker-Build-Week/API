@@ -160,6 +160,14 @@ def import_clients():
                                                   technologyName='Angular',
                                                   technologyImagePath=tp+'angular.png',
                                                   important=True)
+    ProjectTechnologyStacks.objects.get_or_create(project=digi_repair,
+                                                  technologyName='HTML5',
+                                                  technologyImagePath=tp+'html5.svg',
+                                                  important=True)
+    ProjectTechnologyStacks.objects.get_or_create(project=digi_repair,
+                                                  technologyName='Javascript',
+                                                  technologyImagePath=tp+'jsicon.png',
+                                                  important=True)                                                                                                                                               
     ProjectTechnologyStacks.objects.get_or_create(project=un_app,
                                                   technologyName='Java',
                                                   technologyImagePath=tp+'java.jpg',
