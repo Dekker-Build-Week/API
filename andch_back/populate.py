@@ -39,14 +39,16 @@ def import_clients():
                         projectDescription='Peer point is a legal app which is'
                         +'fun and good, blah blah blah, blah')
     peerpoint.save()
-    vogue_app = Project(client=cni, projectTitle='Front Row (Fashion Show CMS)',
-                         projectDescription='Initially the application managed content for the US Vogue fashion shows,'+ 
-                        'now the current application manages content  for all markets.'+ 
-                        'For Global markets, Global content editors are able to manage central data,'+ 
-                        'schedule new fashion shows and much more. Local market editors can add localised content, add reviews,'+ 
-                        'hide fashion shows and promote content. Throughout the fashion season the solution maintained a 100% uptime. '+
-                        'That this site is not just static - the content is constantly up to date with the very latest fashion show content:'+ 
-                        '“From the catwalk to being live on our fashion shows experience within mere moments, when the hype is at its greatest and user interest is at its peak”')
+    vogue_app = Project(client=cni, projectTitle='Vogue Runway',
+                     projectDescription='Initially the application managed content for the US Vogue fashion shows,'+ 
+                    'the launch of Vogue Runway, an extensive resource of'+
+                    '12,000-plus collections, over 100 seasons, and more'+
+                    'than 1 million runway looks. To coincide with the big'+
+                    'debut, we’re introducing a new app that will appeal to'+
+                    'the over-scheduled and the under-stimulated alike. Meet'+
+                    'Vogue Runway, the app that provides style-minded' +
+                    'smartphone users with unlimited access to fashion shows'+
+                    'from around the globe. Whenever. Wherever')
     
     vogue_app.save()
     un_app = Project(client=eshopworld, projectTitle='UN Payment Site',
