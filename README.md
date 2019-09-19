@@ -9,5 +9,6 @@ brew install openssl
 brew install postgresql
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 pip3 install -r requirments.txt              # You should probs do this step in a virtual enviroment, but w/e
+./release.sh
 ```
 Then run the application by navigating to the  `andch_back` directory and run `python manage.py runserver`
