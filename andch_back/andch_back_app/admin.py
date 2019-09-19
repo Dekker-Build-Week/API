@@ -5,7 +5,6 @@ from andch_back_app.models import Client, Andi, Project, ProjectAndis, ProjectIm
 
 admin.site.register(Client)
 admin.site.register(Andi)
-admin.site.register(ProjectVideos)
 
 admin.site.site_header = "ANDchievements Admin"
 admin.site.site_title = "ANDchievements Admin Portal"
@@ -38,3 +37,9 @@ class ProjectTechnologyStacksAdmin(admin.ModelAdmin):
     ordering = ['technologyName']
 
 admin.site.register(ProjectTechnologyStacks, ProjectTechnologyStacksAdmin)
+
+class ProjectVideosAdmin(admin.ModelAdmin):
+    list_display = ['project', 'projectVideoPath']
+    list_filter = ['project']
+
+admin.site.register(ProjectVideos, ProjectVideosAdmin)
