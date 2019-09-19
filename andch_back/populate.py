@@ -21,7 +21,7 @@ def import_clients():
     cni = Client(clientName='Condé Nast International',
                          clientImagePath=client_path + 'CondeNast.jpg')
     cni.save()
-    allen_and_overy = Client(clientName='allen_and_overy',
+    allen_and_overy = Client(clientName='Allen and Overy',
                              clientImagePath=client_path + 'AllenAndOvery.jpg')
     allen_and_overy.save()
     eshopworld = Client(clientName='eShopWorld', clientImagePath=client_path + 'eshopworld.jpg')
