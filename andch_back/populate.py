@@ -14,6 +14,7 @@ django.setup()
 
 from andch_back_app.models import Client, Project, Andi, ProjectAndis
 from andch_back_app.models import ProjectImages, ProjectTechnologyStacks
+from andch_back_app.models import ProjectVideos
 
 def import_clients():
     print('Importing clients... ', end=' ')
@@ -178,6 +179,10 @@ def import_clients():
                                                   technologyName='iOS',
                                                   technologyImagePath=tp+'azure.jpg',
                                                   important=True)
+    ProjectVideos.objects.get_or_create(project=vogue_app,
+                                        projectVideoPath='project_videos/Vogue.MOV')
+    ProjectVideos.objects.get_or_create(project=asto_io,
+                                        projectVideoPath='project_videos/Asto.MOV')
 
 def main():
     # Set up environment
