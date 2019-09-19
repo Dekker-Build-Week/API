@@ -92,7 +92,15 @@ def import_clients():
     ola_a.save()
     diana_d = Andi(andiName='Diana Donca',andiPhotoPath=andi_photos+'DianaDonca.png')
     diana_d.save()
-    
+    david_g = Andi(andiName='David Garvie',andiPhotoPath=andi_photos+'DavidGarvie.png')
+    david_g.save()
+    jemal_a = Andi(andiName='Jemal Ahmedov',andiPhotoPath=andi_photos+'JemalAhmedov.png')
+    jemal_a.save()
+    jabari_h = Andi(andiName='Jabari Holder',andiPhotoPath=andi_photos+'JabariHolder.png')
+    jabari_h.save()
+    sabah_p = Andi(andiName='Sabah Peter',andiPhotoPath=andi_photos+'SabahPeter.png')
+    sabah_p.save()
+
     
     christian_c = Andi(andiName='Christian Chatterton',andiPhotoPath=andi_photos+'ChristianChatteron.png')
     christian_c.save()
@@ -123,11 +131,20 @@ def import_clients():
     
     ProjectAndis.objects.get_or_create(project=peerpoint, projectAndi=phil)
     ProjectAndis.objects.get_or_create(project=peerpoint, projectAndi=christian_c)
+    ProjectAndis.objects.get_or_create(project=peerpoint, projectAndi=jemal_a)
+    ProjectAndis.objects.get_or_create(project=peerpoint, projectAndi=jabari_h)
+    ProjectAndis.objects.get_or_create(project=peerpoint, projectAndi=sabah_p)
+
+
+
     
     ProjectAndis.objects.get_or_create(project=digi_repair, projectAndi=james)
     ProjectAndis.objects.get_or_create(project=digi_repair, projectAndi=rapps)
     
     ProjectAndis.objects.get_or_create(project=asto_io, projectAndi=christian_c)
+    ProjectAndis.objects.get_or_create(project=asto_io, projectAndi=david_g)
+    ProjectAndis.objects.get_or_create(project=asto_io, projectAndi=chris_m)
+
     print('done!')
 
     print('Importing project images...', end=' ')
