@@ -28,6 +28,8 @@ def import_clients():
     eshopworld.save()
     granger = Client(clientName='Granger', clientImagePath=client_path + 'granger.jpg')
     granger.save()
+    santander = Client(clientName='Santander', clientImagePath=client_path + 'santander.jpg')
+    santander.save()
     talk_talk = Client(clientName='TalkTalk', clientImagePath=client_path + 'TalkTalk.png')
     talk_talk.save()
     print('done!')
@@ -39,7 +41,13 @@ def import_clients():
     peerpoint.save()
     vogue_app = Project(client=cni, projectTitle='Front Row (Fashion Show CMS)',
                          projectDescription='vogue'+
-                         'Initially the application managed content for the US Vogue fashion shows, now the current application manages content  for all markets. For Global markets, Global content editors are able to manage central data, schedule new fashion shows and much more. Local market editors can add localised content, add reviews, hide fashion shows and promote content. Throughout the fashion season the solution maintained a 100% uptime.That this site is not just static - the content is constantly up to date with the very latest fashion show content: “From the catwalk to being live on our fashion shows experience within mere moments, when the hype is at its greatest and user interest is at its peak”')
+                         'Initially the application managed content for the US Vogue fashion shows,'+ 
+                        'now the current application manages content  for all markets.'+ 
+                        'For Global markets, Global content editors are able to manage central data,'+ 
+                        'schedule new fashion shows and much more. Local market editors can add localised content, add reviews,'+ 
+                        'hide fashion shows and promote content. Throughout the fashion season the solution maintained a 100% uptime. '+
+                        'That this site is not just static - the content is constantly up to date with the very latest fashion show content:'+ 
+                        '“From the catwalk to being live on our fashion shows experience within mere moments, when the hype is at its greatest and user interest is at its peak”')
     
     vogue_app.save()
     un_app = Project(client=eshopworld, projectTitle='UN Payment Site',
@@ -53,6 +61,13 @@ def import_clients():
                         projectDescription='The aim was to deliver a new marketing site for Grainger’s flagship development, Clipper Quay.'+ 
                            'To also deliver an entirely digital leasing journey for new tenants, from requesting an apartment through to referencing and acceptance.')
     clipper_quay.save()
+    
+    asto_io = Project(client=santander, projectTitle='Asto.io',
+                          projectDescription='The aim was to create an app that gives back time to those leading and managing SMEs.'+
+                      'Enable users to capture, tag and export receipts, aggregate all their banking / financial information,'+ 
+                      'create invoices and access insights. Create a service, featured in the Asto app,'+ 
+                      'that allows users to finance their invoices to fill their cash flow gaps.')
+    asto_io.save()
     
     digi_repair = Project(client=talk_talk, projectTitle='Digital Repair',
                           projectDescription='this project is a talk talk'+
@@ -73,9 +88,12 @@ def import_clients():
     chris_m.save()
     ola_a = Andi(andiName='Ola Abolarinwa',andiPhotoPath=andi_photos+'OlaAbolarinwa.png')
     ola_a.save()
+    diana_d = Andi(andiName='Diana Donca',andiPhotoPath=andi_photos+'DianaDonca.png')
+    diana_d.save()
     
-    christian = Andi(andiName='Christian',andiPhotoPath=andi_photos+'ChristianChatteron.png')
-    christian.save()
+    
+    christian_c = Andi(andiName='Christian Chatterton',andiPhotoPath=andi_photos+'ChristianChatteron.png')
+    christian_c.save()
     james_b = Andi(andiName='James Beck',andiPhotoPath=andi_photos+'JamesBeck.png')
     james_b.save()
     james = Andi(andiName='James Tiffin', andiPhotoPath=andi_photos+'JamesTiffin.png')
@@ -102,10 +120,12 @@ def import_clients():
     ProjectAndis.objects.get_or_create(project=un_app, projectAndi=nate)
     
     ProjectAndis.objects.get_or_create(project=peerpoint, projectAndi=phil)
-    ProjectAndis.objects.get_or_create(project=peerpoint, projectAndi=christian)
+    ProjectAndis.objects.get_or_create(project=peerpoint, projectAndi=christian_c)
     
     ProjectAndis.objects.get_or_create(project=digi_repair, projectAndi=james)
     ProjectAndis.objects.get_or_create(project=digi_repair, projectAndi=rapps)
+    
+    ProjectAndis.objects.get_or_create(project=asto_io, projectAndi=christian_c)
     print('done!')
 
     print('Importing project images...', end=' ')
@@ -139,6 +159,10 @@ def import_clients():
                                                   important=True)
     ProjectTechnologyStacks.objects.get_or_create(project=peerpoint,
                                                   technologyName='Azure',
+                                                  technologyImagePath=tp+'azure.jpg',
+                                                  important=True)
+    ProjectTechnologyStacks.objects.get_or_create(project=asto_io,
+                                                  technologyName='iOS',
                                                   technologyImagePath=tp+'azure.jpg',
                                                   important=True)
 
