@@ -1,10 +1,11 @@
 from django.contrib import admin
-from andch_back_app.models import Client, Andi, Project, ProjectAndis, ProjectImages, ProjectTechnologyStacks
+from andch_back_app.models import Client, Andi, Project, ProjectAndis, ProjectImages, ProjectTechnologyStacks, ProjectVideos
 
 # Register your models here.
 
 admin.site.register(Client)
 admin.site.register(Andi)
+admin.site.register(ProjectVideos)
 
 admin.site.site_header = "ANDchievements Admin"
 admin.site.site_title = "ANDchievements Admin Portal"

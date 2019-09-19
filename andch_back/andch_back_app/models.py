@@ -69,3 +69,10 @@ class ProjectTechnologyStacks(models.Model):
     
     def __str__(self):
         return self.project.projectTitle + ": " + self.technologyName
+
+class ProjectVideos(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    projectVideoPath = models.FileField(upload_to = 'project_videos/')
+
+    def __str__(self):
+        return self.project.projectTitle + ": " + self.projectVideoPath.url

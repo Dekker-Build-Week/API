@@ -1,5 +1,5 @@
 from django.test import TestCase
-from andch_back_app.models import Client, Andi, Project, ProjectAndis, ProjectImages, ProjectTechnologyStacks
+from andch_back_app.models import Client, Andi, Project, ProjectAndis, ProjectImages, ProjectTechnologyStacks, ProjectVideos
 import tempfile
 
 # Create your tests here.
@@ -97,3 +97,15 @@ class ProjectTechnologyStacksTest(TestCase):
     def test_object_name(self):
         projectStack = ProjectTechnologyStacks.objects.get(project=Project.objects.get(projectTitle='British Airways Mobile App'), important=True)
         self.assertEqual(str(projectStack), 'British Airways Mobile App: Java')
+
+class ProjectVideosTest(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        client = Client.objects.create(clientName='British Airways', clientImagePath=tempfile.NamedTemporaryFile(suffix=".jpg").name)
+        project = Project.objects.create(client=client, projectTitle='British Airways Mobile App', projectDescription='test test test')
+        ProjectVideos.objects.create(project=project, projectVideoPath=tempfile.NamedTemporaryFile(suffix=".jpg").name)
+
+    def test_object_name(self):
+        projectVideo = ProjectVideos.objects.get(project=Project.objects.get(projectTitle='British Airways Mobile App'))
+        self.assertEqual(str(projectVideo), 'British Airways Mobile App: ' + projectVideo.projectVideoPath.url)
