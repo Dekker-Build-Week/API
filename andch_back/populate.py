@@ -188,7 +188,7 @@ def import_clients():
                                                   technologyImagePath=tp+'azure.jpg',
                                                   important=True)
     ProjectVideos.objects.get_or_create(project=vogue_app,
-                                        projectVideoPath='project_videos/Vogue.MOV')
+                                        projectVideoPath='project_videos/Vogue.mp4')
     ProjectVideos.objects.get_or_create(project=asto_io,
                                         projectVideoPath='project_videos/Asto.mp4')
 
