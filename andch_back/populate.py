@@ -40,7 +40,7 @@ def import_clients():
                         +'fun and good, blah blah blah, blah')
     peerpoint.save()
     vogue_app = Project(client=cni, projectTitle='Front Row (Fashion Show CMS)',
-                         projectDescription='vogue'+
+                         projectDescription=' '+
                          'Initially the application managed content for the US Vogue fashion shows,'+ 
                         'now the current application manages content  for all markets.'+ 
                         'For Global markets, Global content editors are able to manage central data,'+ 
@@ -151,7 +151,7 @@ def import_clients():
     ProjectImages.objects.get_or_create(position=0, project=un_app,
                                         projectImagePath=proj_img+'eshopworldun.jpg')
     ProjectImages.objects.get_or_create(position=0, project=clipper_quay,
-                                        projectImagePath=proj_img+'grainger.jpg')
+                                        projectImagePath=proj_img+'grainger1.jpg')
     ProjectImages.objects.get_or_create(position=0, project=digi_repair,
                                         projectImagePath=proj_img+'talktalkDigiRepair.jpg')
 
