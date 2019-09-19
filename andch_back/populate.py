@@ -27,8 +27,8 @@ def import_clients():
     allen_and_overy.save()
     eshopworld = Client(clientName='eShopWorld', clientImagePath=client_path + 'eshopworld.jpg')
     eshopworld.save()
-    granger = Client(clientName='Granger', clientImagePath=client_path + 'granger.jpg')
-    granger.save()
+    #granger = Client(clientName='Granger', clientImagePath=client_path + 'granger.jpg')
+    #granger.save()
     santander = Client(clientName='Santander', clientImagePath=client_path + 'santander.jpg')
     santander.save()
     talk_talk = Client(clientName='TalkTalk', clientImagePath=client_path + 'TalkTalk.png')
@@ -59,10 +59,10 @@ def import_clients():
                      'for shipping')
     un_app.save()
     
-    clipper_quay = Project(client=granger, projectTitle='Clipper Quay',
-                        projectDescription='The aim was to deliver a new marketing site for Grainger’s flagship development, Clipper Quay.'+ 
-                           'To also deliver an entirely digital leasing journey for new tenants, from requesting an apartment through to referencing and acceptance.')
-    clipper_quay.save()
+    #clipper_quay = Project(client=granger, projectTitle='Clipper Quay',
+                        #projectDescription='The aim was to deliver a new marketing site for Grainger’s flagship development, Clipper Quay.'+ 
+                        #   'To also deliver an entirely digital leasing journey for new tenants, from requesting an apartment through to referencing and acceptance.')
+    #clipper_quay.save()
     
     asto_io = Project(client=santander, projectTitle='Asto.io',
                           projectDescription='The aim was to create an app that gives back time to those leading and managing SMEs.'+
@@ -152,8 +152,8 @@ def import_clients():
                                         projectImagePath=proj_img+'asto2.jpg')
     ProjectImages.objects.get_or_create(position=0, project=un_app,
                                         projectImagePath=proj_img+'eshopworldun.jpg')
-    ProjectImages.objects.get_or_create(position=0, project=clipper_quay,
-                                        projectImagePath=proj_img+'grainger.jpg')
+    #ProjectImages.objects.get_or_create(position=0, project=clipper_quay,
+                                        #projectImagePath=proj_img+'grainger.jpg')
     ProjectImages.objects.get_or_create(position=0, project=digi_repair,
                                         projectImagePath=proj_img+'talktalkDigiRepair.jpg')
 
