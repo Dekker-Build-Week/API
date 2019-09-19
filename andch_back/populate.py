@@ -72,9 +72,15 @@ def import_clients():
     asto_io.save()
     
     digi_repair = Project(client=talk_talk, projectTitle='Digital Repair',
-                          projectDescription='this project is a talk talk'+
-                         ' project here is some text about this talk talk'+
-                         ' project')
+                          projectDescription='TalkTalk Telecom Group plc (commonly known as TalkTalk Group, trading as TalkTalk) ' +
+                          'is a company which provides pay television, telecommunications, Internet access, and mobile network services' +
+                          ' to businesses and consumers in the United Kingdom. It was founded in 2003 as a subsidiary of Carphone Warehouse ' +
+                          ' and was demerged as a standalone company in March 2010. Its headquarters are in London.' +
+                            ' Originally just a provider of fixed line telephony services to consumers, TalkTalk now offers' +
+                            ' fixed and mobile telephony and broadband services to consumers under the TalkTalk brand, and ' +
+                            'telephony and broadband services to business customers under the TalkTalk Business brand. ' +
+                            'Like some other UK broadband providers, TalkTalk has invested in its own exchange infrastructure,' +
+                            ' known as local-loop-unbundling (LLU), with 92 people of its 100 person customer base unbundled as of December 2012.')
     digi_repair.save()
     print('done!')
 
@@ -187,10 +193,26 @@ def import_clients():
     ProjectTechnologyStacks.objects.get_or_create(project=digi_repair,
                                                   technologyName='Javascript',
                                                   technologyImagePath=tp+'jsicon.png',
-                                                  important=True)                                                                                                                                               
+                                                  important=True)    
+    ProjectTechnologyStacks.objects.get_or_create(project=digi_repair,
+                                                  technologyName='Android',
+                                                  technologyImagePath=tp+'android.png',
+                                                  important=True)      
+     ProjectTechnologyStacks.objects.get_or_create(project=digi_repair,
+                                                  technologyName='MySQL',
+                                                  technologyImagePath=tp+'mysql.png',
+                                                  important=True)     
+     ProjectTechnologyStacks.objects.get_or_create(project=digi_repair,
+                                                  technologyName='Swift',
+                                                  technologyImagePath=tp+'swift.png',
+                                                  important=True)                                                                                                                                                     
     ProjectTechnologyStacks.objects.get_or_create(project=un_app,
                                                   technologyName='Java',
                                                   technologyImagePath=tp+'java.jpg',
+                                                  important=True)
+ProjectTechnologyStacks.objects.get_or_create(project=un_app,
+                                                  technologyName='MySQL',
+                                                  technologyImagePath=tp+'mysql.png',
                                                   important=True)
     ProjectTechnologyStacks.objects.get_or_create(project=vogue_app,
                                                   technologyName='Swift',
@@ -211,6 +233,18 @@ def import_clients():
     ProjectTechnologyStacks.objects.get_or_create(project=asto_io,
                                                   technologyName='iOS',
                                                   technologyImagePath=tp+'azure.jpg',
+                                                  important=True)
+    ProjectTechnologyStacks.objects.get_or_create(project=asto_io,
+                                                  technologyName='nodejs',
+                                                  technologyImagePath=tp+'nodejs.jpg',
+                                                  important=True)
+    ProjectTechnologyStacks.objects.get_or_create(project=asto_io,
+                                                  technologyName='aws',
+                                                  technologyImagePath=tp+'aws.png',
+                                                  important=True)
+    ProjectTechnologyStacks.objects.get_or_create(project=asto_io,
+                                                  technologyName='reactjs',
+                                                  technologyImagePath=tp+'reactjs.jpg',
                                                   important=True)
     ProjectVideos.objects.get_or_create(project=vogue_app,
                                         projectVideoPath='project_videos/Vogue.mp4')
