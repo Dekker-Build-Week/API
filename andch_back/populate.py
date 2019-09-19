@@ -26,6 +26,8 @@ def import_clients():
     allen_and_overy.save()
     eshopworld = Client(clientName='eShopWorld', clientImagePath=client_path + 'eshopworld.jpg')
     eshopworld.save()
+    granger = Client(clientName='Granger', clientImagePath=client_path + 'granger.jpg')
+    granger.save()
     talk_talk = Client(clientName='TalkTalk', clientImagePath=client_path + 'TalkTalk.png')
     talk_talk.save()
     print('done!')
@@ -35,14 +37,23 @@ def import_clients():
                         projectDescription='Peer point is a legal app which is'
                         +'fun and good, blah blah blah, blah')
     peerpoint.save()
-    vogue_app = Project(client=cni, projectTitle='Vogue Runway App',
+    vogue_app = Project(client=cni, projectTitle='Front Row (Fashion Show CMS)',
                          projectDescription='vogue'+
-                         'project AND made for cni?? I hope it was good')
+                         'Initially the application managed content for the US Vogue fashion shows, now the current application manages content  for all markets. For Global markets, Global content editors are able to manage central data, schedule new fashion shows and much more. Local market editors can add localised content, add reviews, hide fashion shows and promote content. Throughout the fashion season the solution maintained a 100% uptime.That this site is not just static - the content is constantly up to date with the very latest fashion show content: “From the catwalk to being live on our fashion shows experience within mere moments, when the hype is at its greatest and user interest is at its peak”')
+    
     vogue_app.save()
     un_app = Project(client=eshopworld, projectTitle='UN Payment Site',
-                     projectDescription='Text about this app, blahblahblahblah'+
-                     'more text goes here')
+                     projectDescription='A personalised storefront for customers who have registered'+
+                     'an interest for a new model of watch'+
+                     'Accepts a deposit to guarantee the customer recieves the watch as soon as its avilable'+
+                     'for shipping')
     un_app.save()
+    
+    clipper_quay = Project(client=granger, projectTitle='Clipper Quay',
+                        projectDescription='The aim was to deliver a new marketing site for Grainger’s flagship development, Clipper Quay.'+ 
+                           'To also deliver an entirely digital leasing journey for new tenants, from requesting an apartment through to referencing and acceptance.')
+    clipper_quay.save()
+    
     digi_repair = Project(client=talk_talk, projectTitle='Digital Repair',
                           projectDescription='this project is a talk talk'+
                          ' project here is some text about this talk talk'+
@@ -54,12 +65,23 @@ def import_clients():
     andi_photos='andis/'
     sam_c = Andi(andiName='Sam Clewlow',andiPhotoPath=andi_photos+'SamClewlow.png')
     sam_c.save()
+    James_g = Andi(andiName='James Grant',andiPhotoPath=andi_photos+'JamesGrant.png')
+    james_g.save()
+    dami_o = Andi(andiName='Dami Olufemi',andiPhotoPath=andi_photos+'DamiOlufemi.png')
+    dami_o.save()
+    chris_m = Andi(andiName='Chris Mason',andiPhotoPath=andi_photos+'ChrisMason.png')
+    chris_m.save()
+    ola_a = Andi(andiName='Ola Abolarinwa',andiPhotoPath=andi_photos+'OlaAbolarinwa.png')
+    ola_a.save()
+    
     christian = Andi(andiName='Christian',andiPhotoPath=andi_photos+'ChristianChatteron.png')
     christian.save()
     james_b = Andi(andiName='James Beck',andiPhotoPath=andi_photos+'JamesBeck.png')
     james_b.save()
     james = Andi(andiName='James Tiffin', andiPhotoPath=andi_photos+'JamesTiffin.png')
     james.save()
+    nate = Andi(andiName='Nate',andiPhotoPath=andi_photos+'Nate.png')
+    nate.save()
     phil = Andi(andiName='Phil',andiPhotoPath=andi_photos+'PhilSmith.png')
     phil.save()
     jerome = Andi(andiName='Jerome', andiPhotoPath=andi_photos+'JeromeTosoni.png')
@@ -71,11 +93,17 @@ def import_clients():
 
     print('Linking ANDis to projects...', end=' ')
     ProjectAndis.objects.get_or_create(project=vogue_app, projectAndi=sam_c)
-    ProjectAndis.objects.get_or_create(project=vogue_app, projectAndi=james)
+    ProjectAndis.objects.get_or_create(project=vogue_app, projectAndi=james_g)
+    ProjectAndis.objects.get_or_create(project=vogue_app, projectAndi=dami_o)
+    ProjectAndis.objects.get_or_create(project=vogue_app, projectAndi=chris_m)
+    
     ProjectAndis.objects.get_or_create(project=un_app, projectAndi=james)
     ProjectAndis.objects.get_or_create(project=un_app, projectAndi=james_b)
+    ProjectAndis.objects.get_or_create(project=un_app, projectAndi=nate)
+    
     ProjectAndis.objects.get_or_create(project=peerpoint, projectAndi=phil)
     ProjectAndis.objects.get_or_create(project=peerpoint, projectAndi=christian)
+    
     ProjectAndis.objects.get_or_create(project=digi_repair, projectAndi=james)
     ProjectAndis.objects.get_or_create(project=digi_repair, projectAndi=rapps)
     print('done!')

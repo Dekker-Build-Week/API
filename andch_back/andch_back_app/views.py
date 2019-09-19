@@ -23,7 +23,7 @@ def all_projects(request):
             for andi in andi_list:
                 andis.append({'ANDiName': andi.projectAndi.andiName, 'ANDiPhoto': serverURL + andi.projectAndi.andiPhotoPath.url})
             for image in project_images_list:
-                imagePaths.append(serverURL + image.projectImagePath.url)
+                imagePaths.append({'source': serverURL + image.projectImagePath.url, 'position':image.position})
             for tech in project_stack_list:
                 techStacks.append({'name': tech.technologyName, 'image': serverURL + tech.technologyImagePath.url, 'important': tech.important})
             
@@ -35,8 +35,8 @@ def all_projects(request):
                     'clientLogo': serverURL + project.client.clientImagePath.url,
                     'projectDescription': project.projectDescription,
                     'team': andis,
+                    'techStack': techStacks,
                     'images': imagePaths,
-                    'techStack': techStacks
                 }
             )
 

@@ -40,17 +40,6 @@
                 }
               ]
             },
-            "images": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "string"
-                }
-              ]
-            },
             "techStack": {
               "type": "array",
               "items": [
@@ -75,6 +64,26 @@
                 }
               ]
             }
+          },
+          "images": {
+            "type": "array",
+            "items": [
+              {
+                "type": "object",
+                "properties": {
+                  "source": {
+                    "type": "string"
+                  },
+                  "position": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "source",
+                  "position"
+                ]
+              }
+            ]
           },
           "required": [
             "projectTitle",
