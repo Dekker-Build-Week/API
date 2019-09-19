@@ -36,10 +36,6 @@ def import_clients():
     print('done!')
 
     print('Importing Projects...', end=' ')
-    peerpoint = Project(client=allen_and_overy, projectTitle='Peer Point',
-                        projectDescription='Peer point is a legal app which is'
-                        +'fun and good, blah blah blah, blah')
-    peerpoint.save()
     vogue_app = Project(client=cni, projectTitle='Vogue Runway',
                      projectDescription='Initially the application managed content for the US Vogue fashion shows,'+ 
                     'the launch of Vogue Runway, an extensive resource of '+
@@ -52,24 +48,28 @@ def import_clients():
                     'from around the globe. Whenever. Wherever.')
     
     vogue_app.save()
-    un_app = Project(client=eshopworld, projectTitle='UN Payment Site',
-                     projectDescription='A personalised storefront for customers who have registered '+
-                     'an interest for a new model of watch.'+
-                     'Accepts a deposit to guarantee the customer recieves the watch as soon as its avilable'+
-                     'for shipping')
-    un_app.save()
-    
-    #clipper_quay = Project(client=granger, projectTitle='Clipper Quay',
-                        #projectDescription='The aim was to deliver a new marketing site for Grainger’s flagship development, Clipper Quay.'+ 
-                        #   'To also deliver an entirely digital leasing journey for new tenants, from requesting an apartment through to referencing and acceptance.')
-    #clipper_quay.save()
-    
     asto_io = Project(client=santander, projectTitle='Asto.io',
                           projectDescription='The aim was to create an app that gives back time to those leading and managing SMEs.'+
                       'Enable users to capture, tag and export receipts, aggregate all their banking / financial information,'+ 
                       'create invoices and access insights. Create a service, featured in the Asto app,'+ 
                       'that allows users to finance their invoices to fill their cash flow gaps.')
     asto_io.save()
+    un_app = Project(client=eshopworld, projectTitle='UN Payment Site',
+                     projectDescription='A personalised storefront for customers who have registered '+
+                     'an interest for a new model of watch.'+
+                     'Accepts a deposit to guarantee the customer recieves the watch as soon as its avilable'+
+                     'for shipping')
+    un_app.save()
+    peerpoint = Project(client=allen_and_overy, projectTitle='Peer Point',
+                        projectDescription='Peer point is a legal app which is'
+                        +'fun and good, blah blah blah, blah')
+    peerpoint.save()
+    
+    #clipper_quay = Project(client=granger, projectTitle='Clipper Quay',
+                        #projectDescription='The aim was to deliver a new marketing site for Grainger’s flagship development, Clipper Quay.'+ 
+                        #   'To also deliver an entirely digital leasing journey for new tenants, from requesting an apartment through to referencing and acceptance.')
+    #clipper_quay.save()
+    
     
     digi_repair = Project(client=talk_talk, projectTitle='Digital Repair',
                           projectDescription='this project is a talk talk'+
