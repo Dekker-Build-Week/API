@@ -142,6 +142,18 @@ def import_clients():
                                         projectImagePath=proj_img+'peerpoint3.jpg')
     ProjectImages.objects.get_or_create(position=3, project=peerpoint,
                                         projectImagePath=proj_img+'peerpoint4.jpg')
+    ProjectImages.objects.get_or_create(position=0, project=asto_io,
+                                        projectImagePath=proj_img+'asto.jpg')
+    ProjectImages.objects.get_or_create(position=1, project=asto_io,
+                                        projectImagePath=proj_img+'asto1.jpg')
+    ProjectImages.objects.get_or_create(position=2, project=asto_io,
+                                        projectImagePath=proj_img+'asto2.jpg')
+    ProjectImages.objects.get_or_create(position=0, project=us_app,
+                                        projectImagePath=proj_img+'eshopworldun.jpg')
+    ProjectImages.objects.get_or_create(position=0, project=clipper_quay,
+                                        projectImagePath=proj_img+'grainger.jpg')
+    ProjectImages.objects.get_or_create(position=0, project=digi_repair,
+                                        projectImagePath=proj_img+'talktalkDigiRepair.jpg')
 
     print('done!')
     tp = 'tech_images/'
