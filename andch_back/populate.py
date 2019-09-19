@@ -148,7 +148,7 @@ def import_clients():
                                         projectImagePath=proj_img+'asto1.jpg')
     ProjectImages.objects.get_or_create(position=2, project=asto_io,
                                         projectImagePath=proj_img+'asto2.jpg')
-    ProjectImages.objects.get_or_create(position=0, project=us_app,
+    ProjectImages.objects.get_or_create(position=0, project=un_app,
                                         projectImagePath=proj_img+'eshopworldun.jpg')
     ProjectImages.objects.get_or_create(position=0, project=clipper_quay,
                                         projectImagePath=proj_img+'grainger.jpg')
