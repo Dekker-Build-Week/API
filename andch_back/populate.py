@@ -256,7 +256,7 @@ def import_clients():
                                                   important=True)
     ProjectTechnologyStacks.objects.get_or_create(project=asto_io,
                                                   technologyName='reactjs',
-                                                  technologyImagePath=tp+'reactjs.jpg',
+                                                  technologyImagePath=tp+'reactjs.png',
                                                   important=True)
     ProjectTechnologyStacks.objects.get_or_create(project=vogue_app,
                                                   technologyName='AWS',
