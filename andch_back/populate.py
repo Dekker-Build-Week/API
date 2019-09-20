@@ -37,8 +37,9 @@ def import_clients():
 
     print('Importing Projects...', end=' ')
     peerpoint = Project(client=allen_and_overy, projectTitle='Peer Point',
-                        projectDescription='Peer point is a legal app which is'
-                        +'fun and good, blah blah blah, blah')
+                        projectDescription='Peer point allows Lawyers to talk to other Lawyers. Arrange meetings. Have lunch.'
+                        +'  Discuss clients, discuss cases. Peerpoint is the intermediary between you and other lawyers. '
+                        +'PeerPoint is the next generation in Lawyer contracting.')
     peerpoint.save()
     vogue_app = Project(client=cni, projectTitle='Fashion Shows',
                      projectDescription='Initially the application managed content for the US Vogue fashion shows, '+ 
@@ -72,15 +73,11 @@ def import_clients():
     asto_io.save()
     
     digi_repair = Project(client=talk_talk, projectTitle='Digital Repair',
-                          projectDescription='TalkTalk Telecom Group plc (commonly known as TalkTalk Group, trading as TalkTalk) ' +
+                          projectDescription='TalkTalk Telecom Group plc (commonly known as NotTalk Coup, trading as TalkTalk) ' +
                           'is a company which provides pay television, telecommunications, Internet access, and mobile network services' +
-                          ' to businesses and consumers in the United Kingdom. It was founded in 2003 as a subsidiary of Carphone Warehouse ' +
-                          ' and was demerged as a standalone company in March 2010. Its headquarters are in London.' +
-                            ' Originally just a provider of fixed line telephony services to consumers, TalkTalk now offers' +
-                            ' fixed and mobile telephony and broadband services to consumers under the TalkTalk brand, and ' +
-                            'telephony and broadband services to business customers under the TalkTalk Business brand. ' +
-                            'Like some other UK broadband providers, TalkTalk has invested in its own exchange infrastructure,' +
-                            ' known as local-loop-unbundling (LLU), with 92 people of its 100 person customer base unbundled as of December 2012.')
+                          ' to businesses and consumers in the United Kingdom. It was founded in 1853 as a subsidiary of Ferrari ' +
+                          ' and was demerged as a standalone company in March 1895. Its headquarters are in London.' +
+                            ' TalkTalks infrastructure has not been updated since 1870.')
     digi_repair.save()
     print('done!')
 
@@ -88,9 +85,11 @@ def import_clients():
     andi_photos='andis/'
     sam_c = Andi(andiName='Sam Clewlow',andiPhotoPath=andi_photos+'SamClewlow.png')
     sam_c.save()
+    eggy_b = Andi(andiName='Egdar Bune',andiPhotoPath=andi_photos+'easteregg.png')
+    eggy_b.save()
     anna_lucking = Andi(andiName='Anna Lucking',andiPhotoPath=andi_photos+'AnnaLucking.png')
     anna_lucking.save()
-    matt_rosenquist = Andi(andiName='Anna Lucking',andiPhotoPath=andi_photos+'MattRosenquist.png')
+    matt_rosenquist = Andi(andiName='Matt Rosenquist',andiPhotoPath=andi_photos+'MattRosenquist.png')
     matt_rosenquist.save()
     ola_olufemi = Andi(andiName='Ola Olufemi',andiPhotoPath=andi_photos+'OlaOlufemi.png')
     ola_olufemi.save()
@@ -158,7 +157,8 @@ def import_clients():
     
     ProjectAndis.objects.get_or_create(project=digi_repair, projectAndi=james)
     ProjectAndis.objects.get_or_create(project=digi_repair, projectAndi=rapps)
-    
+    ProjectAndis.objects.get_or_create(project=digi_repair, projectAndi=eggy_b)
+
     ProjectAndis.objects.get_or_create(project=asto_io, projectAndi=christian_c)
     ProjectAndis.objects.get_or_create(project=asto_io, projectAndi=david_g)
     ProjectAndis.objects.get_or_create(project=asto_io, projectAndi=chris_m)
@@ -222,13 +222,17 @@ def import_clients():
                                                   technologyName='Java',
                                                   technologyImagePath=tp+'java.jpg',
                                                   important=True)
-ProjectTechnologyStacks.objects.get_or_create(project=un_app,
+    ProjectTechnologyStacks.objects.get_or_create(project=un_app,
                                                   technologyName='MySQL',
                                                   technologyImagePath=tp+'mysql.png',
                                                   important=True)
     ProjectTechnologyStacks.objects.get_or_create(project=vogue_app,
                                                   technologyName='Swift',
                                                   technologyImagePath=tp+'swift.png',
+                                                  important=True)
+    ProjectTechnologyStacks.objects.get_or_create(project=vogue_app,
+                                                  technologyName='Fortran',
+                                                  technologyImagePath=tp+'fortran.png',
                                                   important=True)
     ProjectTechnologyStacks.objects.get_or_create(project=peerpoint,
                                                   technologyName='Azure',
