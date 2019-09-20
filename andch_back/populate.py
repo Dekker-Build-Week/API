@@ -48,17 +48,9 @@ def import_clients():
                     '12,000-plus collections, over 100 seasons, and more '+
                     'than 1 million runway looks. To coincide with the big '+
                     'debut, we’re introducing a new app that will appeal to '+
-                    'the over-scheduled and the under-stimulated alike. Meet '+
-                    'Fashion Shows, the app that provides style-minded ' +
-                    'smartphone users with unlimited access to fashion shows '+
-                    'from around the globe. Whenever. Wherever.')
+                    'the over-scheduled and the under-stimulated alike. Dekker forver.')
     
     vogue_app.save()
-    
-    peerpoint = Project(client=allen_and_overy, projectTitle='Peer Point',
-                        projectDescription='Peer point is a legal app which is'
-                        +'fun and good, blah blah blah, blah')
-    peerpoint.save()
 
     un_app = Project(client=eshopworld, projectTitle='UN Payment Site',
                      projectDescription='A personalised storefront for customers who have registered '+
