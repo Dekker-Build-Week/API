@@ -41,6 +41,7 @@ def import_clients():
                         +'  Discuss clients, discuss cases. Peerpoint is the intermediary between you and other lawyers. '
                         +'PeerPoint is the next generation in Lawyer contracting.')
     peerpoint.save()
+
     vogue_app = Project(client=cni, projectTitle='Fashion Shows',
                      projectDescription='Initially the application managed content for the US Vogue fashion shows, '+ 
                     'the launch of Fashion Shows, an extensive resource of '+
@@ -53,6 +54,12 @@ def import_clients():
                     'from around the globe. Whenever. Wherever.')
     
     vogue_app.save()
+    
+    peerpoint = Project(client=allen_and_overy, projectTitle='Peer Point',
+                        projectDescription='Peer point is a legal app which is'
+                        +'fun and good, blah blah blah, blah')
+    peerpoint.save()
+
     un_app = Project(client=eshopworld, projectTitle='UN Payment Site',
                      projectDescription='A personalised storefront for customers who have registered '+
                      'an interest for a new model of watch. '+
@@ -121,9 +128,9 @@ def import_clients():
     james.save()
     nate = Andi(andiName='Nate',andiPhotoPath=andi_photos+'Nate.png')
     nate.save()
-    phil = Andi(andiName='Phil',andiPhotoPath=andi_photos+'PhilSmith.png')
+    phil = Andi(andiName='Phil Smith',andiPhotoPath=andi_photos+'PhilSmith.png')
     phil.save()
-    jerome = Andi(andiName='Jerome', andiPhotoPath=andi_photos+'JeromeTosoni.png')
+    jerome = Andi(andiName='Jerome Tosoni', andiPhotoPath=andi_photos+'JeromeTosoni.png')
     jerome.save()
     rapps = Andi(andiName='Richard Apps',
                         andiPhotoPath=andi_photos+'RichardApps.png')
@@ -210,11 +217,11 @@ def import_clients():
                                                   technologyName='Android',
                                                   technologyImagePath=tp+'android.png',
                                                   important=True)      
-     ProjectTechnologyStacks.objects.get_or_create(project=digi_repair,
+    ProjectTechnologyStacks.objects.get_or_create(project=digi_repair,
                                                   technologyName='MySQL',
                                                   technologyImagePath=tp+'mysql.png',
                                                   important=True)     
-     ProjectTechnologyStacks.objects.get_or_create(project=digi_repair,
+    ProjectTechnologyStacks.objects.get_or_create(project=digi_repair,
                                                   technologyName='Swift',
                                                   technologyImagePath=tp+'swift.png',
                                                   important=True)                                                                                                                                                     
@@ -260,8 +267,16 @@ def import_clients():
                                                   important=True)
     ProjectTechnologyStacks.objects.get_or_create(project=asto_io,
                                                   technologyName='reactjs',
-                                                  technologyImagePath=tp+'reactjs.jpg',
+                                                  technologyImagePath=tp+'reactjs.png',
                                                   important=True)
+    ProjectTechnologyStacks.objects.get_or_create(project=vogue_app,
+                                                  technologyName='AWS',
+                                                  technologyImagePath=tp+'aws.png',
+                                                  important=True)
+    ProjectTechnologyStacks.objects.get_or_create(project=vogue_app,
+                                                  technologyName='Kubernetes',
+                                                  technologyImagePath=tp+'kubernetes.png',
+                                                  important=False)
     ProjectVideos.objects.get_or_create(project=vogue_app,
                                         projectVideoPath='project_videos/Vogue.mp4')
     ProjectVideos.objects.get_or_create(project=asto_io,
