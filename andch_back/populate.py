@@ -36,10 +36,6 @@ def import_clients():
     print('done!')
 
     print('Importing Projects...', end=' ')
-    peerpoint = Project(client=allen_and_overy, projectTitle='Peer Point',
-                        projectDescription='Peer point is a legal app which is'
-                        +'fun and good, blah blah blah, blah')
-    peerpoint.save()
     vogue_app = Project(client=cni, projectTitle='Fashion Shows',
                      projectDescription='Initially the application managed content for the US Vogue fashion shows, '+ 
                     'the launch of Fashion Shows, an extensive resource of '+
@@ -52,6 +48,12 @@ def import_clients():
                     'from around the globe. Whenever. Wherever.')
     
     vogue_app.save()
+    
+    peerpoint = Project(client=allen_and_overy, projectTitle='Peer Point',
+                        projectDescription='Peer point is a legal app which is'
+                        +'fun and good, blah blah blah, blah')
+    peerpoint.save()
+
     un_app = Project(client=eshopworld, projectTitle='UN Payment Site',
                      projectDescription='A personalised storefront for customers who have registered '+
                      'an interest for a new model of watch. '+
