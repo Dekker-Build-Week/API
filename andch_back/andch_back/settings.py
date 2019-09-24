@@ -140,6 +140,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 CORS_ORIGIN_WHITELIST = [
          'http://localhost:3000',
          'https://andchievements.herokuapp.com'
+         'http://video-react.js.org'
      ]
 
 django_heroku.settings(locals(), test_runner=False)
