@@ -139,7 +139,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CORS_ORIGIN_WHITELIST = [
          'http://localhost:3000',
-         'https://andcheivements.herokuapp.com'
+         'https://andchievements.herokuapp.com'
      ]
 
 django_heroku.settings(locals(), test_runner=False)
